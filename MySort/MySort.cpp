@@ -93,7 +93,7 @@ public:
         quick_sort(a, 0, a.size() - 1);
     }
 
-    void heap_sort(vector<int> &a) {
+    void heap_sort(vector<int> &a) {    //堆排序
         int N = a.size();
         for (int i = (N - 2) / 2; i >= 0; i--) {    //调整成大根堆
             sink(a, i, N - 1);

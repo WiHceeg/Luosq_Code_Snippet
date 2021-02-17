@@ -34,7 +34,7 @@ public:
         count--;
     }
 
-    bool connect(int p, int q) {
+    bool isconnect(int p, int q) {
         int rootp = find(p);
         int rootq = find(q);
         return rootp == rootq;
@@ -61,7 +61,7 @@ int main() {
     ans.union2(2, 4);
     ans.union2(9, 5);
     ans.union2(4, 9);
-    cout << ans.connect(2, 5) << endl;
+    cout << ans.isconnect(2, 5) << endl;
     cout << ans.getcount() << endl;
     return 0;
 }

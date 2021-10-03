@@ -2,9 +2,25 @@
 
 gcc问题。
 
-gcc -g是什么意思？-D怎么用？ 
+
+
+gcc `-g`是什么意思？`-D`怎么用？ 
+
+答：`-g`是给 GDB 调试用，`-D`是用来定义宏的，比如`-D DEBUG`
+
+
 
 制作静态库用什么命令？制作动态库用什么命令？
+
+答：静态库打包用`ar rcs libxxx.a xxx.o xxx.o`; 动态库打包`gcc -c -fpic a.c b.c`然后`gcc -shared a.o b.o -o libxxx.so`
+
+r 将文件插入备存文件中
+
+c 建立备份文件
+
+s 索引
+
+
 
 文件I/O
 
@@ -155,7 +171,17 @@ int fcntl(int fd, int cmd, ... /* arg */ );
 
 命令`ps aux`, `ps ajx`
 
-命令`top`
+a 显示终端上的所有进程，包括其他用户的 
+
+u 详细信息
+
+x 显示没有控制终端的进程
+
+j 列出与作业控制相关的讯息
+
+
+
+命令`top` 实时显示进程动态，`-d`设置时间间隔
 
 获取进程id
 
@@ -163,6 +189,7 @@ int fcntl(int fd, int cmd, ... /* arg */ );
 pid_t getpid(void);
 
 pid_t getppid(void);
+// 获取父进程的pid
 
 pid_t getpgid(pid_t pid);
 //获取进程pid所在的进程组的pgid,如果pid实参为0,则返回本进程所在的进程组的pgid。
